@@ -10,6 +10,7 @@ module alexskxy.transportfinder {
     requires org.apache.httpcomponents.httpcore;
     requires com.google.api.client;
 
+    exports alexskxy.transportfinder.parts;
     exports alexskxy.swisstransport;
     exports alexskxy.swisstransport.entity;
     exports alexskxy.transportfinder;

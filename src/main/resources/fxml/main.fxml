@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane style="-fx-padding: 10; -fx-fit-to-width: true">
-    <Label text="Hello World!"/>
-</AnchorPane>
+<?import alexskxy.transportfinder.parts.SearchConnectionsController?>
+<?import alexskxy.transportfinder.parts.ShowConnectionsController?>
+<?import javafx.scene.layout.VBox?>
+<VBox minHeight="250" minWidth="750" style="-fx-padding: 10; -fx-fit-to-width: true"
+      xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="alexskxy.transportfinder.MainController">
+    <SearchConnectionsController fx:id="searchConnectionsComponent"/>
+    <ShowConnectionsController fx:id="showConnectionsComponent"/>
+</VBox>

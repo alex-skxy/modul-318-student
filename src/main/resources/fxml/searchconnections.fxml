@@ -1,0 +1,40 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml" collapsible="false"
+         minWidth="500" style="-fx-fit-to-width: true"
+         text="Verbindungen Suchen"
+>
+    <fx:define>
+        <ToggleGroup fx:id="departureOrArrival"/>
+    </fx:define>
+
+    <VBox style="-fx-padding: 10; -fx-fit-to-width: true">
+        <GridPane id="VBox" hgap="10" vgap="10">
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS"/>
+            </rowConstraints>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+            <!--row one-->
+            <Button fx:id="showStartPoint" text="map" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="startLookup" text="start suchen" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="-&gt;" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="endLookup" text="end suchen" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            <Button fx:id="showEndPoint" text="map" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+            <!--row two-->
+            <HBox GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Spinner fx:id="timePicker" promptText=""/>
+                <DatePicker fx:id="datePicker"/>
+            </HBox>
+            <!--row three-->
+            <HBox GridPane.rowIndex="3" GridPane.columnIndex="1">
+                <ToggleButton toggleGroup="$departureOrArrival" fx:id="departure" text="Abfahrt"/>
+                <ToggleButton toggleGroup="$departureOrArrival" fx:id="arrival" text="Anfahrt"/>
+            </HBox>
+        </GridPane>
+        <HBox alignment="BASELINE_RIGHT">
+            <Button text="Verbindungen anzeigen"/>
+        </HBox>
+    </VBox>
+</fx:root>
