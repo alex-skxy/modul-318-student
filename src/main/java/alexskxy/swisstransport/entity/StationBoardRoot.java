@@ -7,5 +7,5 @@ import java.util.List;
 @Data
 public class StationBoardRoot {
     public Station station;
-    public List<StationBoard> stationBoard;
+    public List<StationBoard> stationboard;
 }

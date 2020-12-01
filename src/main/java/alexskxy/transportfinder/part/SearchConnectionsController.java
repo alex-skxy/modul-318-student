@@ -1,6 +1,8 @@
 package alexskxy.transportfinder.part;
 
 import alexskxy.swisstransport.TransportService;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +26,10 @@ public class SearchConnectionsController extends TitledPane implements Initializ
     @FXML public ToggleGroup departureOrArrival;
     @FXML public ToggleButton departure;
     @FXML public ToggleButton arrival;
+    @FXML public Button showConnections;
+    @FXML public Button showDepartures;
     public ShowConnectionsController showConnectionsController;
+    public DepartureBoardController departureBoardController;
 
     public SearchConnectionsController() throws IOException {
         this.transportService = new TransportService();
@@ -39,6 +44,16 @@ public class SearchConnectionsController extends TitledPane implements Initializ
     public void initialize(URL location, ResourceBundle resources) {
         datePicker.setValue(LocalDate.now());
         departure.setSelected(true);
+
+        BooleanBinding fromFieldEmpty = Bindings.createBooleanBinding(
+                () -> fromInput.getText().isEmpty(),
+                fromInput.textProperty());
+        BooleanBinding toFieldEmpty = Bindings.createBooleanBinding(
+                () -> toInput.getText().isEmpty(),
+                toInput.textProperty());
+
+        showConnections.disableProperty().bind(fromFieldEmpty.or(toFieldEmpty));
+        showDepartures.disableProperty().bind(fromFieldEmpty);
     }
 
     public void showConnections(ActionEvent actionEvent) {
@@ -52,6 +67,7 @@ public class SearchConnectionsController extends TitledPane implements Initializ
     }
 
     public void showDepartures(ActionEvent actionEvent) {
-
+        String from = fromInput.getText();
+        departureBoardController.show(transportService.getStationBoard(from));
     }
 }

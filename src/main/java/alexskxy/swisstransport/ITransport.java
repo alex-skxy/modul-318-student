@@ -7,7 +7,7 @@ import alexskxy.swisstransport.entity.Stations;
 public interface ITransport {
     Stations getStations(String query);
 
-    StationBoardRoot getStationBoard(String station, String id);
+    StationBoardRoot getStationBoard(String station);
 
     Connections getConnections(String fromStation, String toStation);
 }

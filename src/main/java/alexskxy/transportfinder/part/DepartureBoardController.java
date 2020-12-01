@@ -32,7 +32,7 @@ public class DepartureBoardController extends TitledPane implements Initializabl
     }
 
     public void show(StationBoardRoot stationBoardRoot) {
-        this.departures = FXCollections.observableArrayList(DepartureViewMapper.mapToViews(stationBoardRoot.stationBoard));
+        this.departures = FXCollections.observableArrayList(DepartureViewMapper.mapToViews(stationBoardRoot.stationboard));
         departureView.setItems(this.departures);
         this.setCollapsible(true);
         this.setExpanded(true);

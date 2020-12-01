@@ -45,10 +45,10 @@ public class TransportService implements ITransport {
     }
 
     @Override
-    public StationBoardRoot getStationBoard(String station, String id) {
+    public StationBoardRoot getStationBoard(String station) {
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
             station = urlEncode(station);
-            var request = new HttpGet("http://transport.opendata.ch/v1/stationboard?station=" + station + "&id=" + id);
+            var request = new HttpGet("http://transport.opendata.ch/v1/stationboard?station=" + station);
             var response = httpClient.execute(request);
 
             if (response != null) {
@@ -88,6 +88,7 @@ public class TransportService implements ITransport {
                     + "&to=" + urlEncode(toStation)
                     + "&date=" + urlEncode(dateFormatter.format(date))
                     + "&time=" + urlEncode(timeFormatter.format(time))
+                    //TODO isArrivalTime doesn't work?
                     + "&isArrivalTime" + urlEncode(String.valueOf(isArrival ? 1 : 0)));
             var response = httpClient.execute(request);
 

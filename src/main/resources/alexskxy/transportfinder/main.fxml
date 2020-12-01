@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import alexskxy.transportfinder.part.DepartureBoardController?>
 <?import alexskxy.transportfinder.part.SearchConnectionsController?>
 <?import alexskxy.transportfinder.part.ShowConnectionsController?>
 <?import javafx.scene.control.Accordion?>
@@ -12,6 +13,7 @@
         <panes>
             <SearchConnectionsController fx:id="searchConnectionsComponent"/>
             <ShowConnectionsController fx:id="showConnectionsComponent"/>
+            <DepartureBoardController fx:id="departureBoardController"/>
         </panes>
     </Accordion>
 </VBox>

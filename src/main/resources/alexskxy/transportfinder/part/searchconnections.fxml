@@ -35,8 +35,8 @@
             </HBox>
         </GridPane>
         <HBox alignment="BASELINE_RIGHT">
-            <Button onAction="#showDepartures" text="Abfahrten anzeigen"/>
-            <Button onAction="#showConnections" text="Verbindungen anzeigen"/>
+            <Button fx:id="showDepartures" onAction="#showDepartures" text="Abfahrten anzeigen"/>
+            <Button fx:id="showConnections" onAction="#showConnections" text="Verbindungen anzeigen"/>
         </HBox>
     </VBox>
 </fx:root>
