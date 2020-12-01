@@ -1,4 +1,4 @@
-package alexskxy.transportfinder.parts;
+package alexskxy.transportfinder.part;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

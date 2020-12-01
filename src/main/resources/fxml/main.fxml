@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import alexskxy.transportfinder.parts.SearchConnectionsController?>
-<?import alexskxy.transportfinder.parts.ShowConnectionsController?>
+<?import alexskxy.transportfinder.part.SearchConnectionsController?>
+<?import alexskxy.transportfinder.part.ShowConnectionsController?>
 <?import javafx.scene.layout.VBox?>
 <VBox minHeight="250" minWidth="750" style="-fx-padding: 10; -fx-fit-to-width: true"
       xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"

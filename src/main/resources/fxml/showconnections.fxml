@@ -1,20 +1,42 @@
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
 <fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml" collapsible="false" expanded="false"
          minWidth="500" style="-fx-fit-to-width: true"
          text="Verbindungen"
 >
-    <TableView>
+    <TableView fx:id="connectionView" style="-fx-fit-to-width: true">
         <columns>
-            <TableColumn>
+            <TableColumn text="From">
                 <cellValueFactory>
-                    <PropertyValueFactory>
-                        <!--TODO-->
-                    </PropertyValueFactory>
+                    <PropertyValueFactory property="fromStationName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Departure">
+                <cellValueFactory>
+                    <PropertyValueFactory property="departureTimestamp"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="To">
+                <cellValueFactory>
+                    <PropertyValueFactory property="toStationName"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="Arrival">
+                <cellValueFactory>
+                    <PropertyValueFactory property="arrivalTimestamp"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="Duration">
+                <cellValueFactory>
+                    <PropertyValueFactory property="duration"/>
                 </cellValueFactory>
             </TableColumn>
         </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
     </TableView>
 </fx:root>

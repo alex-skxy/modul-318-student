@@ -1,7 +1,7 @@
 package alexskxy.transportfinder;
 
-import alexskxy.transportfinder.parts.SearchConnectionsController;
-import alexskxy.transportfinder.parts.ShowConnectionsController;
+import alexskxy.transportfinder.part.SearchConnectionsController;
+import alexskxy.transportfinder.part.ShowConnectionsController;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
