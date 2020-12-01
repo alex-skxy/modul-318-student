@@ -19,9 +19,9 @@
             </columnConstraints>
             <!--row one-->
             <Button fx:id="showStartPoint" text="map" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-            <TextField fx:id="startLookup" text="start suchen" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <TextField fx:id="fromInput" promptText="Start" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
             <Label text="-&gt;" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
-            <TextField fx:id="endLookup" text="end suchen" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            <TextField fx:id="toInput" promptText="Ziel" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
             <Button fx:id="showEndPoint" text="map" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
             <!--row two-->
             <HBox GridPane.rowIndex="1" GridPane.columnIndex="1">

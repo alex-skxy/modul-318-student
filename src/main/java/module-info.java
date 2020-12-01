@@ -17,4 +17,5 @@ module alexskxy.transportfinder {
     opens alexskxy.swisstransport;
     opens alexskxy.swisstransport.entity;
     opens alexskxy.transportfinder;
+    opens alexskxy.transportfinder.view;
 }

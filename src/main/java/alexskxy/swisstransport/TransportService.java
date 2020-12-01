@@ -12,9 +12,14 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class TransportService implements ITransport {
     private final Gson gson;
+    private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
     public TransportService() {
         this.gson = new Gson();
@@ -76,13 +81,13 @@ public class TransportService implements ITransport {
         return null;
     }
 
-    public Connections getConnections(String fromStation, String toStation, String date, String time, boolean isArrival) {
+    public Connections getConnections(String fromStation, String toStation, LocalDate date, LocalTime time, boolean isArrival) {
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
             var request = new HttpGet("http://transport.opendata.ch/v1/connections?from="
                     + urlEncode(fromStation)
                     + "&to=" + urlEncode(toStation)
-                    + "&date=" + urlEncode(date)
-                    + "&time=" + urlEncode(time)
+                    + "&date=" + urlEncode(dateFormatter.format(date))
+                    + "&time=" + urlEncode(timeFormatter.format(time))
                     + "&isArrivalTime" + urlEncode(String.valueOf(isArrival ? 1 : 0)));
             var response = httpClient.execute(request);
 

@@ -42,5 +42,7 @@ public class ShowConnectionsController extends TitledPane implements Initializab
     public void show(List<Connection> connections) {
         this.connections = FXCollections.observableArrayList(ConnectionViewMapper.mapToViews(connections));
         connectionView.setItems(this.connections);
+        this.setCollapsible(true);
+        this.setExpanded(true);
     }
 }
