@@ -13,7 +13,6 @@ import javafx.scene.control.TitledPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -21,17 +20,11 @@ public class ShowConnectionsController extends TitledPane implements Initializab
     @FXML public TableView<ConnectionView> connectionView;
     public ObservableList<ConnectionView> connections = FXCollections.observableArrayList();
 
-    public ShowConnectionsController() {
-        try {
-            URL url = Paths.get("./src/main/resources/fxml/showconnections.fxml").toUri().toURL();
-            var fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(url);
-            fxmlLoader.setRoot(this);
-            fxmlLoader.setController(this);
-            fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public ShowConnectionsController() throws IOException {
+        var fxmlLoader = new FXMLLoader(getClass().getResource("showconnections.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+        fxmlLoader.load();
     }
 
     @Override

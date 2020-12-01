@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.nio.file.Paths;
 
 public class Main extends Application {
     public static void main(String[] args) {
@@ -16,13 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        var url = Paths.get("./src/main/resources/fxml/main.fxml").toUri().toURL();
-        var fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(url);
-        fxmlLoader.load();
-
-        Parent root = fxmlLoader.getRoot();
-        MainController mc = fxmlLoader.getController();
+        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
 
         Scene scene = new Scene(root);
 

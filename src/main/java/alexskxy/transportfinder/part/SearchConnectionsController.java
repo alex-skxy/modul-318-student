@@ -9,7 +9,6 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
@@ -27,18 +26,12 @@ public class SearchConnectionsController extends TitledPane implements Initializ
     @FXML public ToggleButton arrival;
     public ShowConnectionsController showConnectionsController;
 
-    public SearchConnectionsController() {
+    public SearchConnectionsController() throws IOException {
         this.transportService = new TransportService();
-        try {
-            URL url = Paths.get("./src/main/resources/fxml/searchconnections.fxml").toUri().toURL();
-            var fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(url);
-            fxmlLoader.setRoot(this);
-            fxmlLoader.setController(this);
-            fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        var fxmlLoader = new FXMLLoader(getClass().getResource("searchconnections.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+        fxmlLoader.load();
     }
 
 

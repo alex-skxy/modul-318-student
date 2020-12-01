@@ -13,24 +13,17 @@ import javafx.scene.control.TitledPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class DepartureBoardController extends TitledPane implements Initializable {
     @FXML public TableView<DepartureView> departureView;
     public ObservableList<DepartureView> departures = FXCollections.observableArrayList();
 
-    public DepartureBoardController() {
-        try {
-            URL url = Paths.get("./src/main/resources/fxml/departureboard.fxml").toUri().toURL();
-            var fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(url);
-            fxmlLoader.setRoot(this);
-            fxmlLoader.setController(this);
-            fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public DepartureBoardController() throws IOException {
+        var fxmlLoader = new FXMLLoader(getClass().getResource("departureboard.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+        fxmlLoader.load();
     }
 
     @Override
