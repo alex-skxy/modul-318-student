@@ -76,13 +76,14 @@ public class Transport implements ITransport {
         return null;
     }
 
-    public Connections getConnections(String fromStation, String toStation, String date, String time) {
+    public Connections getConnections(String fromStation, String toStation, String date, String time, boolean isArrival) {
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
             var request = new HttpGet("http://transport.opendata.ch/v1/connections?from="
                     + urlEncode(fromStation)
                     + "&to=" + urlEncode(toStation)
                     + "&date=" + urlEncode(date)
-                    + "&time=" + urlEncode(time));
+                    + "&time=" + urlEncode(time)
+                    + "&isArrivalTime" + urlEncode(String.valueOf(isArrival ? 1 : 0)));
             var response = httpClient.execute(request);
 
             if (response != null) {
