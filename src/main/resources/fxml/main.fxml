@@ -2,10 +2,15 @@
 
 <?import alexskxy.transportfinder.part.SearchConnectionsController?>
 <?import alexskxy.transportfinder.part.ShowConnectionsController?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.layout.VBox?>
-<VBox minHeight="250" minWidth="750" style="-fx-padding: 10; -fx-fit-to-width: true"
+<VBox minHeight="250" minWidth="750" spacing="10" style="-fx-padding: 10; -fx-fit-to-width: true; -fx-fit-to-height: true"
       xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="alexskxy.transportfinder.MainController">
-    <SearchConnectionsController fx:id="searchConnectionsComponent"/>
-    <ShowConnectionsController fx:id="showConnectionsComponent"/>
+    <Accordion expandedPane="$searchConnectionsComponent">
+        <panes>
+            <SearchConnectionsController fx:id="searchConnectionsComponent"/>
+            <ShowConnectionsController fx:id="showConnectionsComponent"/>
+        </panes>
+    </Accordion>
 </VBox>

@@ -44,7 +44,8 @@ public class SearchConnectionsController extends TitledPane implements Initializ
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        datePicker.setValue(LocalDate.now());
+        departure.setSelected(true);
     }
 
     public void showConnections(ActionEvent actionEvent) {
@@ -55,5 +56,9 @@ public class SearchConnectionsController extends TitledPane implements Initializ
         boolean isArrival = departureOrArrival.getSelectedToggle().equals(arrival);
 
         showConnectionsController.show(transportService.getConnections(from, to, date, time, isArrival).getConnections());
+    }
+
+    public void showDepartures(ActionEvent actionEvent) {
+
     }
 }

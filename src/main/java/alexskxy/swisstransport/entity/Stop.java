@@ -5,5 +5,6 @@ import lombok.Data;
 
 @Data
 public class Stop {
-    public DateTime departure;
+    public Station station;
+    public String departure;
 }

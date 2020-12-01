@@ -1,7 +1,7 @@
 <?import alexskxy.transportfinder.part.TimeSpinner?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml" collapsible="false"
+<fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml"
          minWidth="500" style="-fx-fit-to-width: true"
          text="Verbindungen Suchen"
 >
@@ -35,6 +35,7 @@
             </HBox>
         </GridPane>
         <HBox alignment="BASELINE_RIGHT">
+            <Button onAction="#showDepartures" text="Abfahrten anzeigen"/>
             <Button onAction="#showConnections" text="Verbindungen anzeigen"/>
         </HBox>
     </VBox>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml"
+         minWidth="500" style="-fx-fit-to-width: true"
+         text="Abfahrten"
+>
+    <TableView fx:id="departureView" style="-fx-fit-to-width: true">
+        <columns>
+            <TableColumn text="From">
+                <cellValueFactory>
+                    <PropertyValueFactory property="fromStationName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="To">
+                <cellValueFactory>
+                    <PropertyValueFactory property="toStationName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Departure">
+                <cellValueFactory>
+                    <PropertyValueFactory property="departure"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+</fx:root>
