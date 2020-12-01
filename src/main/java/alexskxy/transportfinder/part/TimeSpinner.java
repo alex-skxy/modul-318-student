@@ -27,7 +27,7 @@ public class TimeSpinner extends Spinner<LocalTime> {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
-        StringConverter<LocalTime> localTimeConverter = new StringConverter<LocalTime>() {
+        StringConverter<LocalTime> localTimeConverter = new StringConverter<>() {
 
             @Override
             public String toString(LocalTime time) {
@@ -52,7 +52,7 @@ public class TimeSpinner extends Spinner<LocalTime> {
 
         };
 
-        TextFormatter<LocalTime> textFormatter = new TextFormatter<LocalTime>(localTimeConverter, time,
+        TextFormatter<LocalTime> textFormatter = new TextFormatter<>(localTimeConverter, time,
                 c -> {
                     String newText = c.getControlNewText();
                     if (newText.matches("[0-9]{0,2}:[0-9]{0,2}")) {
@@ -61,7 +61,7 @@ public class TimeSpinner extends Spinner<LocalTime> {
                     return null;
                 });
 
-        SpinnerValueFactory<LocalTime> valueFactory = new SpinnerValueFactory<LocalTime>() {
+        SpinnerValueFactory<LocalTime> valueFactory = new SpinnerValueFactory<>() {
             {
                 setConverter(localTimeConverter);
                 setValue(time);
@@ -99,8 +99,7 @@ public class TimeSpinner extends Spinner<LocalTime> {
     private static LocalTime roundTime(LocalTime time) {
         int timeMinutes = time.getMinute();
         int minute = Math.round((float) timeMinutes / 15) * 15;
-        var local = time.withMinute(minute);
-        return local;
+        return minute == 60 ? time.plusHours(1).withMinute(0) : time.withMinute(minute);
     }
 
     public ObjectProperty<Mode> modeProperty() {
