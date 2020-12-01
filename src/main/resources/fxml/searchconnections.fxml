@@ -1,3 +1,4 @@
+<?import alexskxy.transportfinder.part.TimeSpinner?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml" collapsible="false"
@@ -24,8 +25,8 @@
             <Button fx:id="showEndPoint" text="map" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
             <!--row two-->
             <HBox GridPane.rowIndex="1" GridPane.columnIndex="1">
-                <Spinner fx:id="timePicker" promptText=""/>
-                <DatePicker fx:id="datePicker"/>
+                <TimeSpinner fx:id="timePicker" editable="true" promptText="Zeit"/>
+                <DatePicker fx:id="datePicker" promptText="Datum"/>
             </HBox>
             <!--row three-->
             <HBox GridPane.rowIndex="3" GridPane.columnIndex="1">
@@ -34,7 +35,7 @@
             </HBox>
         </GridPane>
         <HBox alignment="BASELINE_RIGHT">
-            <Button text="Verbindungen anzeigen"/>
+            <Button onAction="#showConnections" text="Verbindungen anzeigen"/>
         </HBox>
     </VBox>
 </fx:root>

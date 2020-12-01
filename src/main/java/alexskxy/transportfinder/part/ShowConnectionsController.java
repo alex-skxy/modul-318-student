@@ -5,6 +5,7 @@ import alexskxy.transportfinder.view.ConnectionView;
 import alexskxy.transportfinder.view.ConnectionViewMapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ShowConnectionsController extends TitledPane implements Initializable {
-    public TableView<ConnectionView> tableView;
+    @FXML public TableView<ConnectionView> connectionView;
     public ObservableList<ConnectionView> connections = FXCollections.observableArrayList();
 
     public ShowConnectionsController() {
@@ -40,6 +41,6 @@ public class ShowConnectionsController extends TitledPane implements Initializab
 
     public void show(List<Connection> connections) {
         this.connections = FXCollections.observableArrayList(ConnectionViewMapper.mapToViews(connections));
-        tableView.setItems(this.connections);
+        connectionView.setItems(this.connections);
     }
 }
