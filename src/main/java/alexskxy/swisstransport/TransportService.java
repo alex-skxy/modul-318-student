@@ -13,10 +13,10 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class Transport implements ITransport {
+public class TransportService implements ITransport {
     private final Gson gson;
 
-    public Transport() {
+    public TransportService() {
         this.gson = new Gson();
     }
 

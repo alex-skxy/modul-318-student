@@ -11,7 +11,7 @@ public class TransportTest {
 
     @Test
     public void locations() {
-        testee = new Transport();
+        testee = new TransportService();
         var stations = testee.getStations("Sursee,");
 
         assertEquals(10, stations.stations.size());
@@ -19,7 +19,7 @@ public class TransportTest {
 
     @Test
     public void stationBoard() {
-        testee = new Transport();
+        testee = new TransportService();
         var stationBoard = testee.getStationBoard("Sursee", "8502007");
 
         assertNotNull(stationBoard);
@@ -27,7 +27,7 @@ public class TransportTest {
 
     @Test
     public void connections() {
-        testee = new Transport();
+        testee = new TransportService();
         var connections = testee.getConnections("Sursee", "Luzern");
 
         assertNotNull(connections);
