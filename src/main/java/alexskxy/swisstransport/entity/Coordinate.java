@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Coordinate {
-    public String type;
-    public Double x;
-    public Double y;
+    public final String type;
+    public final Double x;
+    public final Double y;
 }

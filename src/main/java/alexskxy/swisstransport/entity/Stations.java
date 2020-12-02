@@ -6,5 +6,5 @@ import java.util.List;
 
 @Data
 public class Stations {
-    public List<Station> stations;
+    public final List<Station> stations;
 }

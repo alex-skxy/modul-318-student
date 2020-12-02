@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class StationBoardRoot {
-    public Station station;
-    public List<StationBoard> stationboard;
+    public final Station station;
+    public final List<StationBoard> stationboard;
 }

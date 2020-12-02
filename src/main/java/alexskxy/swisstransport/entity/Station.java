@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class Station {
-    public String id;
-    public String name;
-    public Integer score;
-    public Coordinate coordinate;
-    public Double distance;
+    public final String id;
+    public final String name;
+    public final Integer score;
+    public final Coordinate coordinate;
+    public final Double distance;
 }

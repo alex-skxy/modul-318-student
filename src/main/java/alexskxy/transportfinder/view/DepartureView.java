@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class DepartureView {
-    private String fromStationName;
-    private String toStationName;
-    private String departure;
+    public final String fromStationName;
+    public final String toStationName;
+    public final String departure;
 }

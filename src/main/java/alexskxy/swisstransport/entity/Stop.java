@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class Stop {
-    public Station station;
-    public String departure;
+    public final Station station;
+    public final String departure;
 }

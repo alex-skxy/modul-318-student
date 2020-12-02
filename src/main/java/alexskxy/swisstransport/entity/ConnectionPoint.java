@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class ConnectionPoint {
-    public Station station;
-    public String arrival;
-    public String arrivalTimestamp;
-    public String departure;
-    public String departureTimestamp;
-    public Integer delay;
-    public String Platform;
-    public String RealtimeAvailability;
+    public final Station station;
+    public final String arrival;
+    public final String arrivalTimestamp;
+    public final String departure;
+    public final String departureTimestamp;
+    public final Integer delay;
+    public final String Platform;
+    public final String RealtimeAvailability;
 }

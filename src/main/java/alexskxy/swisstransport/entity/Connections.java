@@ -6,5 +6,5 @@ import java.util.List;
 
 @Data
 public class Connections {
-    public List<Connection> connections;
+    public final List<Connection> connections;
 }

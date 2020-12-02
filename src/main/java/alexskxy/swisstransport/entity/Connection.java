@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Connection {
-    public ConnectionPoint from;
-    public ConnectionPoint to;
-    public String duration;
+    public final ConnectionPoint from;
+    public final ConnectionPoint to;
+    public final String duration;
 }

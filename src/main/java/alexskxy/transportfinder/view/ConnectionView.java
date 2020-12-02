@@ -6,9 +6,9 @@ import lombok.Data;
 @Data
 @Builder
 public class ConnectionView {
-    private String fromStationName;
-    private String departure;
-    private String toStationName;
-    private String arrival;
-    private String duration;
+    public final String fromStationName;
+    public final String departure;
+    public final String toStationName;
+    public final String arrival;
+    public final String duration;
 }
