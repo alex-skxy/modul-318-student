@@ -3,6 +3,7 @@ module alexskxy.transportfinder {
     requires org.junit.platform.commons;
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
     requires com.google.gson;
     requires static org.mapstruct.processor;
     requires static lombok;

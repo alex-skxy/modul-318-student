@@ -7,13 +7,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.*;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public class SearchConnectionsController extends TitledPane implements Initializable {
@@ -65,6 +69,8 @@ public class SearchConnectionsController extends TitledPane implements Initializ
 
         showConnections.disableProperty().bind(fromFieldEmpty.or(toFieldEmpty));
         showDepartures.disableProperty().bind(fromFieldEmpty);
+        showStartPoint.disableProperty().bind(fromFieldEmpty);
+        showEndPoint.disableProperty().bind(toFieldEmpty);
     }
 
     public void showConnections(ActionEvent actionEvent) {
@@ -80,5 +86,28 @@ public class SearchConnectionsController extends TitledPane implements Initializ
     public void showDepartures(ActionEvent actionEvent) {
         String from = fromInput.getText();
         departureBoardController.show(transportService.getStationBoard(from));
+    }
+
+    public void showEndPoint(ActionEvent actionEvent) {
+        showStation(toInput.getText());
+    }
+
+    public void showStartPoint(ActionEvent actionEvent) {
+        showStation(fromInput.getText());
+    }
+
+    public void showStation(String input) {
+        var optionalStation = transportService.getStations(input).stations.stream().findFirst();
+        optionalStation.ifPresent((station) ->
+                {
+                    CompletableFuture.runAsync(() -> {
+                        try {
+                            Desktop.getDesktop().browse(new URL("https://www.google.com/maps/search/?api=1&query=" + station.getCoordinate().getX() + "," + station.getCoordinate().getY()).toURI());
+                        } catch (IOException | URISyntaxException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                }
+        );
     }
 }
