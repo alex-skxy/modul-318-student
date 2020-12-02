@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
-    id 'edu.sc.seis.launch4j' version '2.4.9'
 }
 
 sourceCompatibility = 14
@@ -55,10 +54,6 @@ dependencies {
 
 
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
-}
-
-launch4j {
-    mainClassName = 'alexskxy.transportfinder.Main'
 }
 
 tasks.named('test') {

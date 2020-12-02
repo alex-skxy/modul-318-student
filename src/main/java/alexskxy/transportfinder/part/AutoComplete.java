@@ -20,13 +20,11 @@ import java.util.concurrent.CompletableFuture;
  * and Fabian Ochmann
  */
 public class AutoComplete extends TextField {
+    private final ContextMenu entriesPopup;
     private StringListFunction entrySource;
-
-    private ContextMenu entriesPopup;
-
     private boolean popupHidden = false;
 
-    private String textOccurenceStyle = "-fx-font-weight: bold; "
+    private String textoccurrenceStyle = "-fx-font-weight: bold; "
             + "-fx-fill: #00B1E7;";
 
     private int maxEntries = 10;
@@ -86,16 +84,16 @@ public class AutoComplete extends TextField {
         int count = Math.min(searchResult.size(), getMaxEntries());
         for (int i = 0; i < count; i++) {
             final String result = searchResult.get(i);
-            int occurence;
+            int occurrence;
 
-            occurence = result.toLowerCase().indexOf(text.toLowerCase());
+            occurrence = result.toLowerCase().indexOf(text.toLowerCase());
 
-            if (!(occurence == -1)) {
-                Text pre = new Text(result.substring(0, occurence));
-                Text in = new Text(result.substring(occurence,
-                        occurence + text.length()));
-                in.setStyle(getTextOccurenceStyle());
-                Text post = new Text(result.substring(occurence + text.length()));
+            if (!(occurrence == -1)) {
+                Text pre = new Text(result.substring(0, occurrence));
+                Text in = new Text(result.substring(occurrence,
+                        occurrence + text.length()));
+                in.setStyle(getTextoccurrenceStyle());
+                Text post = new Text(result.substring(occurrence + text.length()));
                 TextFlow entryFlow = new TextFlow(pre, in, post);
                 CustomMenuItem item = new CustomMenuItem(entryFlow, true);
                 item.setOnAction(actionEvent -> {
@@ -110,12 +108,12 @@ public class AutoComplete extends TextField {
         }
     }
 
-    public String getTextOccurenceStyle() {
-        return textOccurenceStyle;
+    public String getTextoccurrenceStyle() {
+        return textoccurrenceStyle;
     }
 
-    public void setTextOccurenceStyle(String textOccurenceStyle) {
-        this.textOccurenceStyle = textOccurenceStyle;
+    public void setTextoccurrenceStyle(String textoccurrenceStyle) {
+        this.textoccurrenceStyle = textoccurrenceStyle;
     }
 
     public boolean isPopupHidden() {

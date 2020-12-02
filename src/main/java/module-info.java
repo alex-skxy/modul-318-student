@@ -12,6 +12,7 @@ module alexskxy.transportfinder {
     requires com.google.api.client;
 
     exports alexskxy.transportfinder.part;
+    exports alexskxy.transportfinder.view;
     exports alexskxy.swisstransport;
     exports alexskxy.swisstransport.entity;
     exports alexskxy.transportfinder;

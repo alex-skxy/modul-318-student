@@ -35,8 +35,7 @@ public class TransportService implements ITransport {
 
             if (response != null) {
                 var message = EntityUtils.toString(response.getEntity(), "UTF-8");
-                var stations = gson.fromJson(message, Stations.class);
-                return stations;
+                return gson.fromJson(message, Stations.class);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,8 +52,7 @@ public class TransportService implements ITransport {
 
             if (response != null) {
                 var message = EntityUtils.toString(response.getEntity(), "UTF-8");
-                var stationBoard = gson.fromJson(message, StationBoardRoot.class);
-                return stationBoard;
+                return gson.fromJson(message, StationBoardRoot.class);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,8 +70,7 @@ public class TransportService implements ITransport {
 
             if (response != null) {
                 var message = EntityUtils.toString(response.getEntity(), "UTF-8");
-                var connections = gson.fromJson(message, Connections.class);
-                return connections;
+                return gson.fromJson(message, Connections.class);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -94,8 +91,7 @@ public class TransportService implements ITransport {
 
             if (response != null) {
                 var message = EntityUtils.toString(response.getEntity(), "UTF-8");
-                var connections = gson.fromJson(message, Connections.class);
-                return connections;
+                return gson.fromJson(message, Connections.class);
             }
         } catch (IOException e) {
             e.printStackTrace();

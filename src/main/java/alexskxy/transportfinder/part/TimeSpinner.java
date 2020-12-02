@@ -106,7 +106,7 @@ public class TimeSpinner extends Spinner<LocalTime> {
         return mode;
     }
 
-    public final Mode getMode() {
+    private Mode getMode() {
         return modeProperty().get();
     }
 
