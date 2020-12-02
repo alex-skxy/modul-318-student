@@ -85,7 +85,6 @@ public class TransportService implements ITransport {
                     + "&to=" + urlEncode(toStation)
                     + "&date=" + urlEncode(dateFormatter.format(date))
                     + "&time=" + urlEncode(timeFormatter.format(time))
-                    //TODO isArrivalTime doesn't work?
                     + "&isArrivalTime" + urlEncode(String.valueOf(isArrival ? 1 : 0)));
             var response = httpClient.execute(request);
 

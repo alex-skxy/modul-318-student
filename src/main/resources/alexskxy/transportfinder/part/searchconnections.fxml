@@ -2,7 +2,7 @@
 <?import alexskxy.transportfinder.part.TimeSpinner?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml"
+<fx:root xmlns:fx="http://javafx.com/fxml" type="javafx.scene.control.TitledPane"
          minWidth="500" style="-fx-fit-to-width: true"
          text="Verbindungen Suchen"
 >

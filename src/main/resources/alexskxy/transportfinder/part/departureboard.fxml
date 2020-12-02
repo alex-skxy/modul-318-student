@@ -2,7 +2,7 @@
 
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.control.*?>
-<fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml"
+<fx:root xmlns:fx="http://javafx.com/fxml" type="javafx.scene.control.TitledPane"
          minWidth="500" style="-fx-fit-to-width: true"
          text="Abfahrten"
 >
