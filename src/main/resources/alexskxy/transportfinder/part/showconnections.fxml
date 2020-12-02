@@ -5,6 +5,9 @@
          text="Verbindungen"
 >
     <TableView fx:id="connectionView" style="-fx-fit-to-width: true">
+        <placeholder>
+            <Label text="Keine Abfahrten gefunden"/>
+        </placeholder>
         <columns>
             <TableColumn text="From">
                 <cellValueFactory>

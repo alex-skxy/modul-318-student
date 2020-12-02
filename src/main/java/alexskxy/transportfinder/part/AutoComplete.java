@@ -2,10 +2,6 @@ package alexskxy.transportfinder.part;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Side;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.CustomMenuItem;
@@ -26,17 +22,12 @@ import java.util.concurrent.CompletableFuture;
 public class AutoComplete extends TextField {
     private StringListFunction entrySource;
 
-    private ObservableList<String> filteredEntries
-            = FXCollections.observableArrayList();
-
     private ContextMenu entriesPopup;
-
-    private boolean caseSensitive = false;
 
     private boolean popupHidden = false;
 
     private String textOccurenceStyle = "-fx-font-weight: bold; "
-            + "-fx-fill: red;";
+            + "-fx-fill: #00B1E7;";
 
     private int maxEntries = 10;
 
@@ -49,7 +40,6 @@ public class AutoComplete extends TextField {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String s2) {
                 if (getText().length() < 3) {
-                    filteredEntries.clear();
                     entriesPopup.hide();
                 } else {
                     LinkedList<String> searchResult = new LinkedList<>();
@@ -60,9 +50,6 @@ public class AutoComplete extends TextField {
                     String text = getText();
 
                     if (searchResult.size() > 0) {
-                        filteredEntries.clear();
-                        filteredEntries.addAll(searchResult);
-
                         //Only show popup if not in filter mode
                         if (!isPopupHidden()) {
                             populatePopup(searchResult, text);
@@ -101,44 +88,26 @@ public class AutoComplete extends TextField {
             final String result = searchResult.get(i);
             int occurence;
 
-            if (isCaseSensitive()) {
-                occurence = result.indexOf(text);
-            } else {
-                occurence = result.toLowerCase().indexOf(text.toLowerCase());
-            }
+            occurence = result.toLowerCase().indexOf(text.toLowerCase());
 
-            //Part before occurence (might be empty)
-            Text pre = new Text(result.substring(0, occurence));
-            //Part of (first) occurence
-            Text in = new Text(result.substring(occurence,
-                    occurence + text.length()));
-            in.setStyle(getTextOccurenceStyle());
-            //Part after occurence
-            Text post = new Text(result.substring(occurence + text.length(),
-                    result.length()));
-
-            TextFlow entryFlow = new TextFlow(pre, in, post);
-
-            CustomMenuItem item = new CustomMenuItem(entryFlow, true);
-            item.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent actionEvent) {
+            if (!(occurence == -1)) {
+                Text pre = new Text(result.substring(0, occurence));
+                Text in = new Text(result.substring(occurence,
+                        occurence + text.length()));
+                in.setStyle(getTextOccurenceStyle());
+                Text post = new Text(result.substring(occurence + text.length()));
+                TextFlow entryFlow = new TextFlow(pre, in, post);
+                CustomMenuItem item = new CustomMenuItem(entryFlow, true);
+                item.setOnAction(actionEvent -> {
                     setText(result);
                     entriesPopup.hide();
-                }
-            });
-            menuItems.add(item);
+                });
+                menuItems.add(item);
+            }
+
+            entriesPopup.getItems().clear();
+            entriesPopup.getItems().addAll(menuItems);
         }
-        entriesPopup.getItems().clear();
-        entriesPopup.getItems().addAll(menuItems);
-    }
-
-    public boolean isCaseSensitive() {
-        return caseSensitive;
-    }
-
-    public void setCaseSensitive(boolean caseSensitive) {
-        this.caseSensitive = caseSensitive;
     }
 
     public String getTextOccurenceStyle() {
@@ -155,10 +124,6 @@ public class AutoComplete extends TextField {
 
     public void setPopupHidden(boolean popupHidden) {
         this.popupHidden = popupHidden;
-    }
-
-    public ObservableList<String> getFilteredEntries() {
-        return filteredEntries;
     }
 
     public int getMaxEntries() {
