@@ -2,7 +2,7 @@
 
 By Aleksandra Kina for ÜK M318, 24.11-02.12.2020 Handed in on 02.12.2020
 
-![screenshort](doc/images/app.png)
+![screenshort](images/app.png)
 
 # Dokumentation
 
@@ -33,7 +33,7 @@ Nutzung, in Art von Benutzerhandbuch, zu dokumentieren.
 
 ## Mockup
 
-![mockup](doc/images/mockup.png)
+![mockup](images/mockup.png)
 
 ## User Stories
 
@@ -56,19 +56,19 @@ Stories TRF-6, TRF-8 und TRF-9 würden wegen Zeitdruck und/oder Softwarelimitati
 1. Programm starten (siehe [Installations- und Starteinleitung](#installations--und-starteinleitung))
 2. Nach Startort suchen (zB. "Surs" eingeben) => Resultäte wie "Sursee" und "Sursee, Bahnof" erscheinen.
 3. Eine Station aus der Liste auswählen.
-   ![](doc/images/3.png)
+   ![](images/3.png)
 4. Auf "map" drücken, um die Station auf einer Karte zu anzeigen => Ein Fenster erscheint mit dem Standort auf einer
    Karte.
-   ![](doc/images/4.png)
+   ![](images/4.png)
 5. Auf "Abfahrten anzeigen" drücken => Fach "Abfahrten" öffnet sich Startort, Zielort und Abfahrtszeit.
-   ![](doc/images/5.png)
+   ![](images/5.png)
 6. Zur Fach "Verbindungen suchen" zurückkehren.
 7. Zielort eingeben.
 8. Zeit, Datum und Abfahrt/Anfahrt auswählen.
-   ![](doc/images/8.png)
+   ![](images/8.png)
 9. Auf "Verbindungen anzeigen" drücken => Fach "Verbindungen" öffnet sich mit den Daten, die den Eingegebenen
    entsprechen,
-   ![](doc/images/9.png)
+   ![](images/9.png)
 
 ## Testprotokoll
 
