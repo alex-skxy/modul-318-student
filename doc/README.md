@@ -1,8 +1,8 @@
 # modul-318-Student: TransportFinder
 
-By Aleksandra Kina for ÜK M318, 24.11-02.12.2020 Handed in on 02.12.2020
+By Aleksandra Kina for ÜK M318, 24.11-02.12.2020 Handed in on 02.12.2020.
 
-![screenshort](images/app.png)
+![screenshot](images/app.png)
 
 # Dokumentation
 
@@ -48,6 +48,7 @@ Nutzung, in Art von Benutzerhandbuch, zu dokumentieren.
 | TRF-7 | Stationen auf Karte   | Ich als User will die eingegebene Station auf der Karte sehen können.                                            | -Karte kann geöffnet werden-Auf der Karte ist die gewählte Station zu sehen.(Abfahrtsstation)                                             | 3         | Fertig          |
 | TRF-8 | Verbindungen per Mail | Ich als User will Informationen zu einer Verbindung einem Kollegen per Mail senden können.                       | -Email Entwurf öffnet sich.-Verbindungsinformationen befinden sich im Inhalt                                                              | 3         | Nicht umgesetzt |
 | TRF-9 | DarkMode              | Ich als User will die Applikation im DarkMode anzeigen können.                                                   | -Das Ui kann per Button Click in den DarkMode geändert werden.                                                                            | 3         | Nicht umgesetzt |
+Geschrieben von: Aleksandra und Fabian
 
 Stories TRF-6, TRF-8 und TRF-9 würden wegen Zeitdruck und/oder Softwarelimitationen nicht umgesetzt.
 
