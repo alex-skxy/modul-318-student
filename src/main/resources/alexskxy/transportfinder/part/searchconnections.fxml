@@ -1,6 +1,7 @@
 <?import alexskxy.transportfinder.part.TimeSpinner?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import alexskxy.transportfinder.part.AutoComplete?>
 <fx:root type="javafx.scene.control.TitledPane" xmlns:fx="http://javafx.com/fxml"
          minWidth="500" style="-fx-fit-to-width: true"
          text="Verbindungen Suchen"
@@ -19,9 +20,9 @@
             </columnConstraints>
             <!--row one-->
             <Button fx:id="showStartPoint" text="map" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-            <TextField fx:id="fromInput" promptText="Start" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <AutoComplete fx:id="fromInput" promptText="Start" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
             <Label text="-&gt;" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
-            <TextField fx:id="toInput" promptText="Ziel" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            <AutoComplete fx:id="toInput" promptText="Ziel" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
             <Button fx:id="showEndPoint" text="map" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
             <!--row two-->
             <HBox GridPane.rowIndex="1" GridPane.columnIndex="1">

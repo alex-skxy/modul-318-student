@@ -14,12 +14,13 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class SearchConnectionsController extends TitledPane implements Initializable {
     private final TransportService transportService;
     @FXML public Button showStartPoint;
-    @FXML public TextField fromInput;
-    @FXML public TextField toInput;
+    @FXML public AutoComplete fromInput;
+    @FXML public AutoComplete toInput;
     @FXML public Button showEndPoint;
     @FXML public TimeSpinner timePicker;
     @FXML public DatePicker datePicker;
@@ -42,6 +43,16 @@ public class SearchConnectionsController extends TitledPane implements Initializ
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        fromInput.setEntrySource(stationName ->
+                transportService.getStations(stationName).stations
+                        .stream().map(station -> station.name)
+                        .collect(Collectors.toList())
+        );
+        toInput.setEntrySource(stationName ->
+                transportService.getStations(stationName).stations
+                        .stream().map(station -> station.name)
+                        .collect(Collectors.toList()));
+
         datePicker.setValue(LocalDate.now());
         departure.setSelected(true);
 
