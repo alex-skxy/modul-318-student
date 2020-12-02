@@ -9,7 +9,7 @@ targetCompatibility = 14
 
 version = '0.0.1'
 group = 'alexskxy.transportfinder'
-mainClassName = "$moduleName/alexskxy.transportfinder.Main"
+mainClassName = "alexskxy.transportfinder.Main"
 
 javafx {
     version = "14"
